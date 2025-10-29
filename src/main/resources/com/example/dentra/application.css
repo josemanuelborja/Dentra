@@ -1,0 +1,58 @@
+.text-field {
+    -fx-background-color: white;
+    -fx-background-radius: 7;
+    -fx-border-color: #d7d7d7;
+    -fx-border-radius: 7;
+    -fx-border-width: 1;
+    -fx-padding: 6 10 6 10;
+    -fx-font-size: 14;
+}
+
+.text-field:hover {
+    -fx-border-color: #468EE0;
+}
+
+.primary-button {
+    -fx-border-radius: 10;
+     -fx-background-radius: 10;
+     -fx-background-color: #29A9FF;
+     -fx-text-fill: black;
+     -fx-font-weight: bold;
+}
+
+.primary-border {
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-color: black;
+
+}
+
+/* === Sign In / Sign Up toggle buttons === */
+/* === Toggle Button Container === */
+.toggle-container {
+    -fx-background-color: #d3d3d3;
+    -fx-background-radius: 10;
+    -fx-padding: 3;
+}
+
+/* === Active Button === */
+.toggle-button-active {
+    -fx-background-color: #29A9FF;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-background-radius: 7;
+    -fx-border-radius: 7;
+    -fx-border-color: transparent;
+}
+
+/* === Inactive Button === */
+.toggle-button-inactive {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-background-radius: 7;
+    -fx-border-radius: 7;
+    -fx-border-color: transparent;
+}
+
+

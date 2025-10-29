@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="554.0" prefWidth="944.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentra.SignupController">
+
+    <children>
+        <BorderPane prefHeight="554.0" prefWidth="944.0">
+            <right>
+                <AnchorPane prefHeight="554.0" prefWidth="283.0" style="-fx-background-color: #61B5ED;" BorderPane.alignment="CENTER" />
+            </right>
+
+            <left>
+                <AnchorPane prefHeight="554.0" prefWidth="660.0" BorderPane.alignment="CENTER">
+
+                    <children>
+
+                        <Label layoutX="257.0" layoutY="129.0" text="Create an Account">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+
+                        <!-- Sign In / Sign Up toggle -->
+                        <HBox layoutX="208.0" layoutY="172.0" spacing="0" styleClass="toggle-container">
+                            <children>
+                                <Button fx:id="signInBtn" onAction="#handleSignInClick" prefHeight="34.0" prefWidth="127.0" styleClass="toggle-button-active" text="Sign In" />
+
+                                <Button fx:id="signUpBtn" onAction="#handleSignUpClick" prefHeight="34.0" prefWidth="128.0" styleClass="toggle-button-inactive" text="Sign up" />
+                            </children>
+                        </HBox>
+
+                        <!-- Input fields -->
+                        <TextField layoutX="189.0" layoutY="224.0" prefHeight="45.26" prefWidth="308.0" promptText="Email" styleClass="primary-border" />
+                        <PasswordField layoutX="189.0" layoutY="400.0" prefHeight="45.26" prefWidth="308.0" promptText="Password" styleClass="primary-border" />
+
+                        <Button fx:id="createaccountBtn" layoutX="272.0" layoutY="461.0" onAction="#handlecreateaccountClick" prefHeight="30.18" prefWidth="141.29" styleClass="primary-button" text="Create Account" />
+                  <TextField layoutX="189.0" layoutY="284.0" prefHeight="45.26" prefWidth="308.0" promptText="First Name" styleClass="primary-border" />
+                  <TextField layoutX="189.0" layoutY="340.0" prefHeight="45.26" prefWidth="308.0" promptText="Last Name" styleClass="primary-border" />
+                  <ImageView fitHeight="192.0" fitWidth="328.0" layoutX="-50.0" layoutY="-51.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/logo.png" />
+                     </image></ImageView>
+                    </children>
+                </AnchorPane>
+            </left>
+        </BorderPane>
+    </children>
+</VBox>

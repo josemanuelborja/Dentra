@@ -8,6 +8,7 @@ module com.example.dentra {
     requires net.synedra.validatorfx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires javafx.graphics;
 
     opens com.example.dentra to javafx.fxml;
     exports com.example.dentra;

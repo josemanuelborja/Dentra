@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="554.0" prefWidth="944.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentra.LoginController">
+
+    <children>
+        <BorderPane prefHeight="554.0" prefWidth="944.0">
+            <right>
+                <AnchorPane prefHeight="554.0" prefWidth="283.0" style="-fx-background-color: #61B5ED;" BorderPane.alignment="CENTER" />
+            </right>
+
+            <left>
+                <AnchorPane prefHeight="554.0" prefWidth="660.0" BorderPane.alignment="CENTER">
+
+                    <children>
+
+                        <Label layoutX="274.0" layoutY="144.0" text="Welcome Back!">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+
+                        <Label layoutX="223.0" layoutY="175.0" text="Please Enter Your Details">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+
+                        <!-- Sign In / Sign Up toggle -->
+                        <HBox layoutX="210.0" layoutY="222.0" spacing="0" styleClass="toggle-container">
+                            <children>
+                                <Button fx:id="signInBtn" onAction="#handleSignInClick" prefHeight="34.0" prefWidth="127.0" styleClass="toggle-button-active" text="Sign In" />
+
+                                <Button fx:id="signUpBtn" onAction="#handleSignUpClick" prefHeight="34.0" prefWidth="128.0" styleClass="toggle-button-inactive" text="Sign up" />
+                            </children>
+                        </HBox>
+
+                        <!-- Input fields -->
+                        <TextField layoutX="189.0" layoutY="270.0" prefHeight="45.26" prefWidth="308.0" promptText="Email" styleClass="primary-border" />
+                        <PasswordField layoutX="189.0" layoutY="327.0" prefHeight="45.26" prefWidth="308.0" promptText="Password" styleClass="primary-border" />
+
+                        <Button layoutX="272.0" layoutY="387.0" prefHeight="30.18" prefWidth="141.29" styleClass="primary-button" text="Login" />
+
+                        <Button fx:id="forgotPasswordBtn" layoutX="279.0" layoutY="426.0" mnemonicParsing="false" onAction="#handleForgotPasswordClick" prefHeight="26.0" prefWidth="127.0" style="-fx-background-color: transparent;" text="Forgot Password?" underline="true">
+                            <font>
+                                <Font name="Arial" size="12.0" />
+                            </font>
+                        </Button>
+                  <ImageView fitHeight="192.0" fitWidth="328.0" layoutX="-50.0" layoutY="-51.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/logo.png" />
+                     </image>
+                  </ImageView>
+                    </children>
+                </AnchorPane>
+            </left>
+        </BorderPane>
+    </children>
+</VBox>
