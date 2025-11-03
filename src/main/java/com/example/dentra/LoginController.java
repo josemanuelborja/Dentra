@@ -20,6 +20,9 @@ public class LoginController {
     private Button forgotPasswordBtn;
 
     @FXML
+    private Button loginBtn;
+
+    @FXML
     private void handleSignInClick() {
         setActiveButton(signInBtn, signUpBtn);
     }
@@ -33,6 +36,19 @@ public class LoginController {
         scene.getStylesheets().add(styleCss);
 
         Stage stage = (Stage) signUpBtn.getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void handleLoginClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-view.fxml"));
+        Scene scene = new Scene(loader.load());
+
+        String styleCss = this.getClass().getResource("application.css").toExternalForm();
+        scene.getStylesheets().add(styleCss);
+
+        Stage stage = (Stage) loginBtn.getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }

@@ -43,7 +43,7 @@
                         <TextField layoutX="189.0" layoutY="270.0" prefHeight="45.26" prefWidth="308.0" promptText="Email" styleClass="primary-border" />
                         <PasswordField layoutX="189.0" layoutY="327.0" prefHeight="45.26" prefWidth="308.0" promptText="Password" styleClass="primary-border" />
 
-                        <Button layoutX="272.0" layoutY="387.0" prefHeight="30.18" prefWidth="141.29" styleClass="primary-button" text="Login" />
+                        <Button fx:id="loginBtn" layoutX="272.0" layoutY="387.0" onAction="#handleLoginClick" prefHeight="30.18" prefWidth="141.29" styleClass="primary-button" text="Login" />
 
                         <Button fx:id="forgotPasswordBtn" layoutX="279.0" layoutY="426.0" mnemonicParsing="false" onAction="#handleForgotPasswordClick" prefHeight="26.0" prefWidth="127.0" style="-fx-background-color: transparent;" text="Forgot Password?" underline="true">
                             <font>

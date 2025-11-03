@@ -54,4 +54,232 @@
     -fx-border-radius: 7;
     -fx-border-color: transparent;
 }
+/* DASHBOARD */
+
+/* Color Palette based on the image */
+.root {
+    -sidebar-bg: #FFFFFF;
+    -main-bg: #f8f9fa; /* Light grey/off-white for main content */
+    -text-dark: #333333;
+    -text-light: #555555;
+    -card-profit-bg: #FDB4B4; /* Light Red/Pink */
+    -card-balance-bg: #EEBCF5; /* Light Purple/Lavender */
+    -card-patients-bg: #C3F0D0; /* Light Green */
+    -table-header-bg: #71EEEC; /* Light Cyan for Table Header */
+}
+
+/* --- Base Styling --- */
+.root {
+    -fx-background-color: -main-bg;
+}
+
+/* --- Sidebar Styling --- */
+#sidebar {
+    -fx-background-color: -sidebar-bg;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 1px 0 0;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -text-light;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10px 15px;
+    -fx-background-radius: 5px;
+}
+
+.nav-button:hover {
+    -fx-background-color: #29A9FF;
+    -fx-text-fill: white;
+}
+
+/* --- Main Content Styling --- */
+.username-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: -text-dark;
+    -fx-alignment: CENTER_RIGHT;
+    -fx-padding: 0 10px 0 0;
+}
+
+.profile-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -text-dark;
+    -fx-font-size: 12px;
+}
+
+.dashboard-title {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -text-dark;
+}
+
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -text-dark;
+}
+
+/* --- Data Cards Styling --- */
+.data-card {
+    -fx-background-color: #FFFFFF; /* Default white background */
+    -fx-background-radius: 10px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 0); /* Subtle shadow */
+}
+
+#profit-card {
+    -fx-background-color: -card-profit-bg;
+}
+
+#balance-card {
+    -fx-background-color: -card-balance-bg;
+}
+
+#patients-card {
+    -fx-background-color: -card-patients-bg;
+}
+
+.card-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -text-dark;
+
+}
+
+.card-value {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -text-dark;
+}
+
+/* --- Table Styling --- */
+#finance-table {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+/* TableView Header */
+.table-view .column-header-background {
+    -fx-background-color: -table-header-bg;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+}
+
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: -text-dark;
+}
+
+/* TableView Cells */
+.table-view .table-row-cell {
+    -fx-background-color: #FFFFFF;
+}
+
+.table-view .table-cell {
+    -fx-padding: 10px 10px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Sidebar Icon */
+
+.sidebar-item {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 10;
+    -fx-padding: 8 20 8 20;
+}
+
+.sidebar-item ImageView {
+    -fx-fit-width: 24;               /* consistent icon size */
+    -fx-fit-height: 24;
+    -fx-preserve-ratio: true;        /* keeps icon from stretching */
+}
+
+.sidebar-item Label {
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;      /* aligns text neatly with icon */
+}
+
+
+/* icon hover color white */
+
+.nav-button-dashboard ImageView {
+    -fx-image: url("image/dashboard.png");
+}
+
+.nav-button-dashboard:hover ImageView {
+    -fx-image: url("image/dashboard-white.png");
+}
+
+/* Staff icon */
+.nav-button-staff ImageView {
+    -fx-image: url("image/users.png");
+}
+
+.nav-button-staff:hover ImageView {
+    -fx-image: url("image/users-white.png");
+}
+
+/* Patients icon */
+.nav-button-patients ImageView {
+    -fx-image: url("image/users-group.png");
+}
+
+.nav-button-patients:hover ImageView {
+    -fx-image: url("image/users-group-white.png");
+}
+
+/* Sales icon */
+.nav-button-sales ImageView {
+    -fx-image: url("image/graph.png");
+}
+
+.nav-button-sales:hover ImageView {
+    -fx-image: url("image/graph-white.png");
+}
+
+/* Purchases icon */
+.nav-button-purchases ImageView {
+    -fx-image: url("image/credit-card.png");
+}
+
+.nav-button-purchases:hover ImageView {
+    -fx-image: url("image/credit-card-white.png");
+}
+
+/* balance icon */
+.nav-button-balance ImageView {
+    -fx-image: url("image/wallet.png");
+}
+
+.nav-button-balance:hover ImageView {
+    -fx-image: url("image/wallet-white.png");
+}
+
+/* settings icon */
+.nav-button-settings ImageView {
+    -fx-image: url("image/settings.png");
+}
+
+.nav-button-settings:hover ImageView {
+    -fx-image: url("image/settings-white.png");
+}
+
+/* logout icon */
+.nav-button-logouts ImageView {
+    -fx-image: url("image/logout.png");
+}
+
+.nav-button-logouts:hover ImageView {
+    -fx-image: url("image/logout-white.png");
+}
 
