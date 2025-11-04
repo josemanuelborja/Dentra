@@ -36,117 +36,117 @@
                                 </ImageView>
                             </children></HBox>
                     </graphic>
-               <styleClass>
-                  <String fx:value="nav-button" />
-                  <String fx:value="nav-button-dashboard" />
-               </styleClass></Button>
+                    <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-button-dashboard" />
+                    </styleClass></Button>
                 <Button prefWidth="200.0" text="Staff">
-               <graphic>
-                  <Pane prefHeight="30.0" prefWidth="23.0">
-                     <children>
-                        <ImageView fitHeight="23.0" fitWidth="24.0" layoutX="-2.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="sidebar-item">
-                           <image>
-                              <Image url="@image/users.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-               </graphic>
-               <styleClass>
-                  <String fx:value="nav-button" />
-                  <String fx:value="nav-button-staff" />
-               </styleClass></Button>
+                    <graphic>
+                        <Pane prefHeight="30.0" prefWidth="23.0">
+                            <children>
+                                <ImageView fitHeight="23.0" fitWidth="24.0" layoutX="-2.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="sidebar-item">
+                                    <image>
+                                        <Image url="@image/users.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                    </graphic>
+                    <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-button-staff" />
+                    </styleClass></Button>
                 <Button prefWidth="200.0" text="Patients">
-               <graphic>
-                  <Pane prefHeight="30.0" prefWidth="23.0">
-                     <children>
-                        <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="-2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" styleClass="sidebar-item">
-                           <image>
-                              <Image url="@image/users-group.png" />
-                           </image></ImageView>
-                     </children>
-                  </Pane>
-               </graphic>
-               <styleClass>
-                  <String fx:value="nav-button" />
-                  <String fx:value="nav-button-patients" />
-               </styleClass></Button>
+                    <graphic>
+                        <Pane prefHeight="30.0" prefWidth="23.0">
+                            <children>
+                                <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="-2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" styleClass="sidebar-item">
+                                    <image>
+                                        <Image url="@image/users-group.png" />
+                                    </image></ImageView>
+                            </children>
+                        </Pane>
+                    </graphic>
+                    <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-button-patients" />
+                    </styleClass></Button>
                 <Button prefWidth="200.0" text="Sales">
-               <graphic>
-                  <Pane prefHeight="30.0" prefWidth="23.0">
-                     <children>
-                        <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="-2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" styleClass="sidebar-item">
-                           <image>
-                              <Image url="@image/graph.png" />
-                           </image></ImageView>
-                     </children>
-                  </Pane>
-               </graphic>
-               <styleClass>
-                  <String fx:value="nav-button" />
-                  <String fx:value="nav-button-sales" />
-               </styleClass></Button>
+                    <graphic>
+                        <Pane prefHeight="30.0" prefWidth="23.0">
+                            <children>
+                                <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="-2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" styleClass="sidebar-item">
+                                    <image>
+                                        <Image url="@image/graph.png" />
+                                    </image></ImageView>
+                            </children>
+                        </Pane>
+                    </graphic>
+                    <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-button-sales" />
+                    </styleClass></Button>
                 <Button prefWidth="200.0" text="Purchases">
-               <graphic>
-                  <Pane prefHeight="30.0" prefWidth="23.0">
-                     <children>
-                        <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="-2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" styleClass="sidebar-item">
-                           <image>
-                              <Image url="@image/credit-card.png" />
-                           </image>
-                        </ImageView>
-                     </children></Pane>
-               </graphic>
-               <styleClass>
-                  <String fx:value="nav-button" />
-                  <String fx:value="nav-button-purchases" />
-               </styleClass></Button>
+                    <graphic>
+                        <Pane prefHeight="30.0" prefWidth="23.0">
+                            <children>
+                                <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="-2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" styleClass="sidebar-item">
+                                    <image>
+                                        <Image url="@image/credit-card.png" />
+                                    </image>
+                                </ImageView>
+                            </children></Pane>
+                    </graphic>
+                    <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-button-purchases" />
+                    </styleClass></Button>
                 <Button prefWidth="200.0" text="Balance">
-               <graphic>
-                  <Pane prefHeight="30.0" prefWidth="23.0">
-                     <children>
-                        <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="-2.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" styleClass="sidebar-item">
-                           <image>
-                              <Image url="@image/wallet.png" />
-                           </image>
-                        </ImageView>
-                     </children></Pane>
-               </graphic>
-               <styleClass>
-                  <String fx:value="nav-button" />
-                  <String fx:value="nav-button-balance" />
-               </styleClass></Button>
+                    <graphic>
+                        <Pane prefHeight="30.0" prefWidth="23.0">
+                            <children>
+                                <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="-2.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" styleClass="sidebar-item">
+                                    <image>
+                                        <Image url="@image/wallet.png" />
+                                    </image>
+                                </ImageView>
+                            </children></Pane>
+                    </graphic>
+                    <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-button-balance" />
+                    </styleClass></Button>
                 <Button prefWidth="200.0" text="Settings">
-               <graphic>
-                  <Pane prefHeight="30.0" prefWidth="23.0">
-                     <children>
-                        <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="-2.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" styleClass="sidebar-item">
-                           <image>
-                              <Image url="@image/settings.png" />
-                           </image>
-                        </ImageView>
-                     </children></Pane>
-               </graphic>
-               <styleClass>
-                  <String fx:value="nav-button" />
-                  <String fx:value="nav-button-settings" />
-               </styleClass></Button>
+                    <graphic>
+                        <Pane prefHeight="30.0" prefWidth="23.0">
+                            <children>
+                                <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="-2.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" styleClass="sidebar-item">
+                                    <image>
+                                        <Image url="@image/settings.png" />
+                                    </image>
+                                </ImageView>
+                            </children></Pane>
+                    </graphic>
+                    <styleClass>
+                        <String fx:value="nav-button" />
+                        <String fx:value="nav-button-settings" />
+                    </styleClass></Button>
             </VBox>
-            <Button alignment="CENTER_LEFT" prefWidth="200.0" text="Log out">
-            <graphic>
-               <Pane prefHeight="30.0" prefWidth="23.0">
-                  <children>
-                     <ImageView fitHeight="27.0" fitWidth="23.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" styleClass="sidebar-item">
-                        <image>
-                           <Image url="@image/logout.png" />
-                        </image>
-                     </ImageView>
-                  </children></Pane>
-            </graphic>
-            <styleClass>
-               <String fx:value="nav-button" />
-               <String fx:value="nav-button-logouts" />
-            </styleClass></Button>
+            <Button fx:id="logoutBtn" alignment="CENTER_LEFT" onAction="#handleLogOutClick" prefWidth="200.0" text="Log out">
+                <graphic>
+                    <Pane prefHeight="30.0" prefWidth="23.0">
+                        <children>
+                            <ImageView fitHeight="27.0" fitWidth="23.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" styleClass="sidebar-item">
+                                <image>
+                                    <Image url="@image/logout.png" />
+                                </image>
+                            </ImageView>
+                        </children></Pane>
+                </graphic>
+                <styleClass>
+                    <String fx:value="nav-button" />
+                    <String fx:value="nav-button-logouts" />
+                </styleClass></Button>
         </VBox>
     </left>
     <center>
