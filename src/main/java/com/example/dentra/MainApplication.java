@@ -14,9 +14,6 @@ public class MainApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("login-view.fxml"));
         Parent root = fxmlLoader.load();
 
-//        LoginController controller = fxmlLoader.getController();
-//        controller.setStage(stage);
-
         Scene scene = new Scene(root);
         String styleCss = this.getClass().getResource("application.css").toExternalForm();
         scene.getStylesheets().add(styleCss);

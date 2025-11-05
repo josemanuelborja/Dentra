@@ -162,11 +162,15 @@
     -fx-border-radius: 5px;
 }
 
-/* TableView Header */
+/* TableView Dashboard Header */
 .table-view .column-header-background {
     -fx-background-color: -table-header-bg;
-    -fx-background-radius: 5px;
-    -fx-border-radius: 5px;
+    -fx-background-radius: 5px 5px 0 0;
+    -fx-border-radius: 5px 5px 0 0;
+
+    /* 🔹 Ito ang critical part */
+    -fx-background-insets: 0 1 0 1;   /* right and left margin inside header */
+    -fx-padding: 0 1 0 1;             /* prevents sticking to edges */
 }
 
 .table-view .column-header {
@@ -282,4 +286,5 @@
 .nav-button-logouts:hover ImageView {
     -fx-image: url("image/logout-white.png");
 }
+
 

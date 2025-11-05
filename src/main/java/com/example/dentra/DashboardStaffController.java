@@ -8,10 +8,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class DashboardController {
+public class DashboardStaffController {
 
     @FXML
-    private Button staffBtn;
+    private Button dashboardBtn;
 
     @FXML
     private Button logoutBtn;
@@ -31,14 +31,14 @@ public class DashboardController {
     }
 
     @FXML
-    private void handleStaffClick() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-staff-view.fxml"));
+    private void handleDashboardClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-view.fxml"));
         Scene scene = new Scene(loader.load());
 
         String styleCss = this.getClass().getResource("application.css").toExternalForm();
         scene.getStylesheets().add(styleCss);
 
-        Stage stage = (Stage) staffBtn.getScene().getWindow();
+        Stage stage = (Stage) dashboardBtn.getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
