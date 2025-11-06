@@ -19,9 +19,6 @@ public class DashboardPatientsController {
     @FXML
     private Button dashboardBtn;
 
-    @FXML
-    private Button addPatientBtn;
-
 
     @FXML
     private void handleLogOutClick() throws IOException {
@@ -65,14 +62,14 @@ public class DashboardPatientsController {
     @FXML
     private void handleAddPatientClick() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("add-patient-view.fxml"));
-        // Load the FXML and store the root node
+
         javafx.scene.Parent root = loader.load();
 
         String styleCss = this.getClass().getResource("application.css").toExternalForm();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(styleCss);
 
-        // Create a new popup stage
+
         Stage popupStage = new Stage();
         popupStage.initModality(javafx.stage.Modality.APPLICATION_MODAL);
         popupStage.setTitle("Add Patient");
