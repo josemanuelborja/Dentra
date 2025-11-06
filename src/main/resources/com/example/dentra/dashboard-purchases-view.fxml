@@ -6,7 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentra.DashboardSalesController">
+<BorderPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentra.DashboardPurchasesController">
     <left>
         <VBox id="sidebar" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
             <padding>
@@ -70,7 +70,7 @@
                         <String fx:value="nav-button" />
                         <String fx:value="nav-button-patients" />
                     </styleClass></Button>
-                <Button prefWidth="200.0" text="Sales">
+                <Button fx:id="salesBtn" onAction="#handleSalesClick" prefWidth="200.0" text="Sales">
                     <graphic>
                         <Pane prefHeight="30.0" prefWidth="23.0">
                             <children>
@@ -84,10 +84,8 @@
                     <styleClass>
                         <String fx:value="nav-button" />
                         <String fx:value="nav-button-sales" />
-                  <String fx:value="active" />
-                  <String fx:value="active-sales" />
                     </styleClass></Button>
-                <Button fx:id="purchasesBtn" onAction="#handlePurchasesClick" prefWidth="200.0" text="Purchases">
+                <Button prefWidth="200.0" text="Purchases">
                     <graphic>
                         <Pane prefHeight="30.0" prefWidth="23.0">
                             <children>
@@ -101,6 +99,8 @@
                     <styleClass>
                         <String fx:value="nav-button" />
                         <String fx:value="nav-button-purchases" />
+                  <String fx:value="active" />
+                  <String fx:value="active-purchases" />
                     </styleClass></Button>
                 <Button prefWidth="200.0" text="Balance">
                     <graphic>
@@ -161,7 +161,7 @@
                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                 </padding>
 
-                <Label styleClass="net-income-label" text="Net Income: ₱132,000" />
+                <Label styleClass="net-income-label" text="Total Sales: ₱132,000" />
 
                 <HBox alignment="BOTTOM_LEFT" spacing="20.0" styleClass="filter-row">
                     <VBox.margin>
@@ -189,15 +189,18 @@
                     </VBox>
                 </HBox>
             </VBox>
-
-            <TableView id="finance-table" fx:id="dashboardTable" prefHeight="350.0" prefWidth="1080.0">
+            <TableView fx:id="dashboardStaffTable" prefHeight="250.0" prefWidth="1018.0" styleClass="user-table">
                 <columns>
-                    <TableColumn fx:id="dateCol" prefWidth="150.0" text="Date" />
-                    <TableColumn fx:id="typeCol" prefWidth="200.0" text="Patient" />
-                    <TableColumn fx:id="descCol" prefWidth="300.0" text="Contact" />
-                    <TableColumn fx:id="statusCol" prefWidth="150.0" text="Address" />
-                    <TableColumn fx:id="amountCol" prefWidth="280.0" text="Amount" />
+                    <TableColumn fx:id="nameCol" prefWidth="180.0" text="Name" />
+                    <TableColumn fx:id="emailCol" prefWidth="250.0" text="Email" />
+                    <TableColumn fx:id="addressCol" prefWidth="250.0" text="Address" />
+                    <TableColumn fx:id="contactCol" prefWidth="150.0" text="Contact" />
+                    <TableColumn fx:id="statusCol" prefWidth="120.0" text="Status" />
+                    <TableColumn fx:id="actionCol" prefWidth="160.4000244140625" text="Action" />
                 </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                </columnResizePolicy>
             </TableView>
         </VBox>
     </center>

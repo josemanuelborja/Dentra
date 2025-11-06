@@ -22,6 +22,8 @@ public class DashboardPatientsController {
     @FXML
     private Button salesBtn;
 
+    @FXML
+    private Button purchasesBtn;
 
     @FXML
     private void handleLogOutClick() throws IOException {
@@ -89,6 +91,19 @@ public class DashboardPatientsController {
         scene.getStylesheets().add(styleCss);
 
         Stage stage = (Stage) salesBtn.getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void handlePurchasesClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-purchases-view.fxml"));
+        Scene scene = new Scene(loader.load());
+
+        String styleCss = this.getClass().getResource("application.css").toExternalForm();
+        scene.getStylesheets().add(styleCss);
+
+        Stage stage = (Stage) purchasesBtn.getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }

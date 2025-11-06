@@ -30,6 +30,9 @@ public class DashboardSalesController implements Initializable {
     @FXML
     private ComboBox<String> typeComboBox;
 
+    @FXML
+    private Button purchasesBtn;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Populate the Gender ComboBox
@@ -79,23 +82,6 @@ public class DashboardSalesController implements Initializable {
         stage.show();
     }
 
-    @FXML
-    private void handleAddPatientClick() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("add-patient-view.fxml"));
-
-        javafx.scene.Parent root = loader.load();
-
-        String styleCss = this.getClass().getResource("application.css").toExternalForm();
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(styleCss);
-
-
-        Stage popupStage = new Stage();
-        popupStage.initModality(javafx.stage.Modality.APPLICATION_MODAL);
-        popupStage.setTitle("Add Patient");
-        popupStage.setScene(scene);
-        popupStage.showAndWait();
-    }
 
     @FXML
     private void handlePatientsClick() throws IOException {
@@ -106,6 +92,19 @@ public class DashboardSalesController implements Initializable {
         scene.getStylesheets().add(styleCss);
 
         Stage stage = (Stage) patientsBtn.getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void handlePurchasesClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-purchases-view.fxml"));
+        Scene scene = new Scene(loader.load());
+
+        String styleCss = this.getClass().getResource("application.css").toExternalForm();
+        scene.getStylesheets().add(styleCss);
+
+        Stage stage = (Stage) purchasesBtn.getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
