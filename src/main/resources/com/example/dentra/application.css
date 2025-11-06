@@ -89,6 +89,19 @@
     -fx-background-radius: 5px;
 }
 
+.nav-button.active {
+    -fx-background-color: #29A9FF;
+    -fx-text-fill: white;
+}
+
+.nav-button.active-dashboard ImageView {
+    -fx-image: url("image/dashboard-white.png");
+}
+
+.nav-button.active-staff ImageView {
+    -fx-image: url("image/users-white.png");
+}
+
 .nav-button:hover {
     -fx-background-color: #29A9FF;
     -fx-text-fill: white;

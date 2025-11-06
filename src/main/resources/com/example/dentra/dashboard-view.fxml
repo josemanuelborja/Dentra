@@ -39,6 +39,8 @@
                     <styleClass>
                         <String fx:value="nav-button" />
                         <String fx:value="nav-button-dashboard" />
+                  <String fx:value="active" />
+                  <String fx:value="active-dashboard" />
                     </styleClass></Button>
                 <Button fx:id="staffBtn" onAction="#handleStaffClick" prefWidth="200.0" text="Staff">
                     <graphic>

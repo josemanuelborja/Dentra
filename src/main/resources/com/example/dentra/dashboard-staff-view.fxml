@@ -54,6 +54,8 @@
                     <styleClass>
                         <String fx:value="nav-button" />
                         <String fx:value="nav-button-staff" />
+                  <String fx:value="active" />
+                  <String fx:value="active-staff" />
                     </styleClass></Button>
                 <Button prefWidth="200.0" text="Patients">
                     <graphic>
