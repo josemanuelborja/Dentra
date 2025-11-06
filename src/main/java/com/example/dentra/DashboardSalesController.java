@@ -80,24 +80,6 @@ public class DashboardSalesController implements Initializable {
     }
 
     @FXML
-    private void handleAddPatientClick() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("add-patient-view.fxml"));
-
-        javafx.scene.Parent root = loader.load();
-
-        String styleCss = this.getClass().getResource("application.css").toExternalForm();
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(styleCss);
-
-
-        Stage popupStage = new Stage();
-        popupStage.initModality(javafx.stage.Modality.APPLICATION_MODAL);
-        popupStage.setTitle("Add Patient");
-        popupStage.setScene(scene);
-        popupStage.showAndWait();
-    }
-
-    @FXML
     private void handlePatientsClick() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-patients-view.fxml"));
         Scene scene = new Scene(loader.load());
