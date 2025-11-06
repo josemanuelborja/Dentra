@@ -106,6 +106,10 @@
     -fx-image: url("image/users-group-white.png");
 }
 
+.nav-button.active-sales ImageView {
+    -fx-image: url("image/graph-white.png");
+}
+
 .nav-button:hover {
     -fx-background-color: #29A9FF;
     -fx-text-fill: white;
@@ -408,4 +412,59 @@
     -fx-background-color: #0069d9;
 }
 
+
+/* DASHBOARD SALES */
+.filter-container {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+/* "Net Income" text */
+.net-income-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333; /* Dark text */
+}
+
+
+.filter-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #555555; /* Grey text */
+}
+
+
+.filter-group {
+    -fx-spacing: 5px;
+}
+
+
+.filter-control {
+    -fx-background-color: #eeeeee; /* Light grey background */
+    -fx-background-radius: 5px;
+    -fx-border-color: transparent;
+}
+
+#typeComboBox .combo-box-popup .list-cell {
+    -fx-text-fill: #000000;
+}
+
+#typeComboBox .combo-box-popup .list-cell:hover {
+    -fx-text-fill: #29A9FF;
+}
+
+
+.filter-control.date-picker .text-field {
+    -fx-background-color: #eeeeee;
+    -fx-background-radius: 5px;
+    -fx-border-color: transparent;
+}
+
+
+.filter-control.combo-box .list-cell {
+    -fx-background-color: #eeeeee;
+    -fx-background-radius: 5px;
+}
 

@@ -19,15 +19,9 @@ public class AddPatientController implements Initializable {
     @FXML private TextField fullNameField;
     @FXML private ComboBox<String> genderComboBox;
     @FXML private TextField ageField;
-    @FXML private TextField phoneField;
-    @FXML private TextField emailField;
-    @FXML private TextField emergencyContactField;
-    @FXML private TextField procedureField;
-    @FXML private TextArea addressArea;
 
     // --- Buttons ---
     @FXML private Button cancelButton;
-    @FXML private Button addPatientButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -72,7 +72,7 @@
                         <String fx:value="nav-button" />
                         <String fx:value="nav-button-patients" />
                     </styleClass></Button>
-                <Button prefWidth="200.0" text="Sales">
+                <Button fx:id="salesBtn" onAction="#handleSalesClick" prefWidth="200.0" text="Sales">
                     <graphic>
                         <Pane prefHeight="30.0" prefWidth="23.0">
                             <children>
