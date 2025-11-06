@@ -103,7 +103,7 @@
                         <String fx:value="nav-button" />
                         <String fx:value="nav-button-purchases" />
                     </styleClass></Button>
-                <Button prefWidth="200.0" text="Balance">
+                <Button fx:id="balanceBtn" onAction="#handleBalanceClick" prefWidth="200.0" text="Balance">
                     <graphic>
                         <Pane prefHeight="30.0" prefWidth="23.0">
                             <children>

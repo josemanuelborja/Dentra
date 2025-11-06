@@ -1,14 +1,19 @@
 package com.example.dentra;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.fxml.Initializable;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class DashboardPatientsController {
+public class DashboardBalanceController implements Initializable {
 
     @FXML
     private Button staffBtn;
@@ -20,13 +25,26 @@ public class DashboardPatientsController {
     private Button dashboardBtn;
 
     @FXML
+    private Button patientsBtn;
+
+    @FXML
+    private ComboBox<String> typeComboBox;
+
+    @FXML
     private Button salesBtn;
 
     @FXML
     private Button purchasesBtn;
 
-    @FXML
-    private Button balanceBtn;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Populate the Gender ComboBox
+        typeComboBox.setItems(FXCollections.observableArrayList(
+                "Child", "Teen", "Adult", "Senior"
+        ));
+
+    }
+
 
     @FXML
     private void handleLogOutClick() throws IOException {
@@ -68,21 +86,16 @@ public class DashboardPatientsController {
     }
 
     @FXML
-    private void handleAddPatientClick() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("add-patient-view.fxml"));
-
-        javafx.scene.Parent root = loader.load();
+    private void handlePatientsClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-patients-view.fxml"));
+        Scene scene = new Scene(loader.load());
 
         String styleCss = this.getClass().getResource("application.css").toExternalForm();
-        Scene scene = new Scene(root);
         scene.getStylesheets().add(styleCss);
 
-
-        Stage popupStage = new Stage();
-        popupStage.initModality(javafx.stage.Modality.APPLICATION_MODAL);
-        popupStage.setTitle("Add Patient");
-        popupStage.setScene(scene);
-        popupStage.showAndWait();
+        Stage stage = (Stage) patientsBtn.getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -107,19 +120,6 @@ public class DashboardPatientsController {
         scene.getStylesheets().add(styleCss);
 
         Stage stage = (Stage) purchasesBtn.getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    private void handleBalanceClick() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-balance-view.fxml"));
-        Scene scene = new Scene(loader.load());
-
-        String styleCss = this.getClass().getResource("application.css").toExternalForm();
-        scene.getStylesheets().add(styleCss);
-
-        Stage stage = (Stage) balanceBtn.getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }

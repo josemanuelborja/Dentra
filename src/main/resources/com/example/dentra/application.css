@@ -114,6 +114,10 @@
     -fx-image: url("image/credit-card-white.png");
 }
 
+.nav-button.active-balance ImageView {
+    -fx-image: url("image/wallet-white.png");
+}
+
 .nav-button:hover {
     -fx-background-color: #29A9FF;
     -fx-text-fill: white;

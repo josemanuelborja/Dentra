@@ -22,7 +22,11 @@ public class DashboardStaffController {
     @FXML
     private Button salesBtn;
 
-    @FXML Button purchasesBtn;
+    @FXML
+    private Button purchasesBtn;
+
+    @FXML
+    private Button balanceBtn;
 
 
     @FXML
@@ -86,6 +90,19 @@ public class DashboardStaffController {
         scene.getStylesheets().add(styleCss);
 
         Stage stage = (Stage) purchasesBtn.getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void handleBalanceClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-balance-view.fxml"));
+        Scene scene = new Scene(loader.load());
+
+        String styleCss = this.getClass().getResource("application.css").toExternalForm();
+        scene.getStylesheets().add(styleCss);
+
+        Stage stage = (Stage) balanceBtn.getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
