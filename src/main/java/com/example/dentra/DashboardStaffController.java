@@ -16,6 +16,9 @@ public class DashboardStaffController {
     @FXML
     private Button logoutBtn;
 
+    @FXML
+    private Button patientsBtn;
+
 
     @FXML
     private void handleLogOutClick() throws IOException {
@@ -42,4 +45,18 @@ public class DashboardStaffController {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    private void handlePatientsClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-patients-view.fxml"));
+        Scene scene = new Scene(loader.load());
+
+        String styleCss = this.getClass().getResource("application.css").toExternalForm();
+        scene.getStylesheets().add(styleCss);
+
+        Stage stage = (Stage) patientsBtn.getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

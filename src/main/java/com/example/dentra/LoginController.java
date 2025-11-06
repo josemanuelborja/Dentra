@@ -44,14 +44,16 @@ public class LoginController {
     private void handleLoginClick() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-view.fxml"));
         Scene scene = new Scene(loader.load());
-
         String styleCss = this.getClass().getResource("application.css").toExternalForm();
         scene.getStylesheets().add(styleCss);
 
         Stage stage = (Stage) loginBtn.getScene().getWindow();
         stage.setScene(scene);
+        stage.sizeToScene();
+        stage.centerOnScreen();
         stage.show();
     }
+
 
     @FXML
     private void handleForgotPasswordClick() throws IOException {

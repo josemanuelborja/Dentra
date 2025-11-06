@@ -102,6 +102,10 @@
     -fx-image: url("image/users-white.png");
 }
 
+.nav-button.active-patients ImageView {
+    -fx-image: url("image/users-group-white.png");
+}
+
 .nav-button:hover {
     -fx-background-color: #29A9FF;
     -fx-text-fill: white;
@@ -298,6 +302,110 @@
 
 .nav-button-logouts:hover ImageView {
     -fx-image: url("image/logout-white.png");
+}
+
+/* add patietns button */
+#addPatientBtn {
+    -fx-background-color: #66E0E0;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 8 15;
+    -fx-cursor: hand;
+}
+
+/* ADD PATIENTS */
+
+.root-pane {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 20, 0, 0, 0);
+    -fx-pref-width: 700px; /* Set a preferred width */
+}
+
+/* --- HEADER --- */
+.title-text {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.subtitle-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #777777;
+}
+
+/* --- FORM --- */
+.form-row {
+    -fx-spacing: 20px; /* Space between form fields in a row */
+}
+
+.form-field-group {
+    -fx-spacing: 5px; /* Space between label and field */
+}
+
+.form-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #444444;
+}
+
+/* Common styles for all input fields */
+.text-field, .text-area, .combo-box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px; /* Ensures inner bg matches border */
+    -fx-font-size: 14px;
+    -fx-pref-height: 40px;
+    -fx-prompt-text-fill: #aaaaaa;
+}
+
+.text-area {
+    -fx-pref-height: 80px; /* Taller for address */
+    -fx-padding: 5px;
+}
+
+/* Style for when a field is focused (clicked) */
+.text-field:focused, .text-area:focused, .combo-box:focused {
+    -fx-border-color: #007bff; /* Blue border on focus */
+    -fx-border-width: 1.5px;
+}
+
+.combo-box .list-cell {
+    -fx-font-size: 14px;
+}
+
+/* --- FOOTER BUTTONS --- */
+.cancel-button {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #bbbbbb;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #555555;
+    -fx-font-weight: bold;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 40px;
+    -fx-font-size: 14px;
+}
+.cancel-button:hover {
+    -fx-background-color: #f9f9f9;
+}
+
+.add-button {
+    -fx-background-color: #29A9FF;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 40px;
+    -fx-font-size: 14px;
+}
+.add-button:hover {
+    -fx-background-color: #0069d9;
 }
 
 

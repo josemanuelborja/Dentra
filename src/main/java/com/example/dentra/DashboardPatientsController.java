@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class DashboardController {
+public class DashboardPatientsController {
 
     @FXML
     private Button staffBtn;
@@ -17,7 +17,11 @@ public class DashboardController {
     private Button logoutBtn;
 
     @FXML
-    private Button patientsBtn;
+    private Button dashboardBtn;
+
+    @FXML
+    private Button addPatientBtn;
+
 
     @FXML
     private void handleLogOutClick() throws IOException {
@@ -46,15 +50,35 @@ public class DashboardController {
     }
 
     @FXML
-    private void handlePatientsClick() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-patients-view.fxml"));
+    private void handleDashboardClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-view.fxml"));
         Scene scene = new Scene(loader.load());
 
         String styleCss = this.getClass().getResource("application.css").toExternalForm();
         scene.getStylesheets().add(styleCss);
 
-        Stage stage = (Stage) patientsBtn.getScene().getWindow();
+        Stage stage = (Stage) dashboardBtn.getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    private void handleAddPatientClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("add-patient-view.fxml"));
+        // Load the FXML and store the root node
+        javafx.scene.Parent root = loader.load();
+
+        String styleCss = this.getClass().getResource("application.css").toExternalForm();
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(styleCss);
+
+        // Create a new popup stage
+        Stage popupStage = new Stage();
+        popupStage.initModality(javafx.stage.Modality.APPLICATION_MODAL);
+        popupStage.setTitle("Add Patient");
+        popupStage.setScene(scene);
+        popupStage.showAndWait();
+    }
+
+
 }

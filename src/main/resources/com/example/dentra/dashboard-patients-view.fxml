@@ -5,9 +5,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentra.DashboardController">
+<BorderPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentra.DashboardPatientsController">
     <left>
         <VBox id="sidebar" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
             <padding>
@@ -25,7 +24,7 @@
                 </Pane>
             </HBox>
             <VBox id="nav-menu" spacing="5.0" VBox.vgrow="ALWAYS">
-                <Button prefWidth="200.0" text="Dashboard">
+                <Button fx:id="dashboardBtn" onAction="#handleDashboardClick" prefWidth="200.0" text="Dashboard">
                     <graphic>
                         <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="23.0" spacing="10.0">
                             <children>
@@ -39,8 +38,6 @@
                     <styleClass>
                         <String fx:value="nav-button" />
                         <String fx:value="nav-button-dashboard" />
-                  <String fx:value="active" />
-                  <String fx:value="active-dashboard" />
                     </styleClass></Button>
                 <Button fx:id="staffBtn" onAction="#handleStaffClick" prefWidth="200.0" text="Staff">
                     <graphic>
@@ -58,7 +55,7 @@
                         <String fx:value="nav-button" />
                         <String fx:value="nav-button-staff" />
                     </styleClass></Button>
-                <Button fx:id="patientsBtn" onAction="#handlePatientsClick" prefWidth="200.0" text="Patients">
+                <Button prefWidth="200.0" text="Patients">
                     <graphic>
                         <Pane prefHeight="30.0" prefWidth="23.0">
                             <children>
@@ -72,6 +69,8 @@
                     <styleClass>
                         <String fx:value="nav-button" />
                         <String fx:value="nav-button-patients" />
+                        <String fx:value="active" />
+                        <String fx:value="active-patients" />
                     </styleClass></Button>
                 <Button prefWidth="200.0" text="Sales">
                     <graphic>
@@ -157,86 +156,35 @@
                 <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
             </padding>
 
-            <HBox alignment="CENTER_RIGHT" prefHeight="40.0">
-                <Label styleClass="username-label" text="Ashton Lactuan" HBox.hgrow="ALWAYS" />
-                <Button styleClass="profile-button" text="▼" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="40.0" />
+
+            <Label prefHeight="46.0" prefWidth="169.0" styleClass="dashboard-title" text="Patients" />
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <StackPane style="-fx-background-color: #d9d9d9; -fx-padding: 5 10; -fx-background-radius: 2;">
+                    <HBox alignment="CENTER_LEFT" spacing="8">
+                        <Label prefHeight="20.0" prefWidth="26.0" style="-fx-font-size: 14px;" text="🔍" />
+                        <TextField fx:id="searchStaffField" prefWidth="250" promptText="Search Patient" style="-fx-background-color: transparent;                                           -fx-border-color: transparent;                                           -fx-prompt-text-fill: #8e8e8e;                                           -fx-font-size: 13px;" />
+                    </HBox>
+                </StackPane>
+            <Button fx:id="addPatientBtn" mnemonicParsing="false" onAction="#handleAddPatientClick" prefHeight="34.0" prefWidth="141.0" text="Add Patient">
+               <HBox.margin>
+                  <Insets left="585.0" />
+               </HBox.margin>
+               <graphic>
+                         <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                             <image>
+                                 <Image url="@image/circle-plus.png" /> <!-- make sure the file name matches -->
+                             </image>
+                         </ImageView>
+               </graphic>
+            </Button>
             </HBox>
-
-            <Label styleClass="dashboard-title" text="Dashboard" />
-
-            <HBox spacing="30.0">
-                <VBox id="profit-card" prefHeight="150.0" prefWidth="300.0" styleClass="data-card">
-                    <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                    </padding>
-                    <Pane prefHeight="110.0" prefWidth="298.0">
-                        <children>
-                            <Label layoutY="71.0" prefHeight="50.0" prefWidth="161.0" styleClass="card-value" text="₱132,000" />
-                            <Label layoutY="-10.0" prefHeight="70.0" prefWidth="131.0" styleClass="card-title" text="Profit this month" wrapText="true">
-                                <font>
-                                    <Font name="System Bold" size="12.0" />
-                                </font>
-                            </Label>
-                            <ImageView fitHeight="58.0" fitWidth="60.0" layoutX="204.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
-                                <image>
-                                    <Image url="@image/Peso%20Symbol.png" />
-                                </image></ImageView>
-                        </children>
-                    </Pane>
-                </VBox>
-                <VBox id="balance-card" layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="300.0" styleClass="data-card">
-                    <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                    </padding>
-                    <children>
-                        <Pane prefHeight="110.0" prefWidth="298.0">
-                            <children>
-                                <Label layoutY="71.0" prefHeight="50.0" prefWidth="161.0" styleClass="card-value" text="₱132,000" />
-                                <Label layoutY="-10.0" prefHeight="70.0" prefWidth="131.0" styleClass="card-title" text="Patients Total Balance" wrapText="true">
-                                    <font>
-                                        <Font name="System Bold" size="12.0" />
-                                    </font>
-                                </Label>
-                                <ImageView fitHeight="58.0" fitWidth="60.0" layoutX="204.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@image/Frame.png" />
-                                    </image>
-                                </ImageView>
-                            </children>
-                        </Pane>
-                    </children>
-                </VBox>
-                <VBox id="patients-card" layoutX="340.0" layoutY="10.0" prefHeight="150.0" prefWidth="300.0" styleClass="data-card">
-                    <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                    </padding>
-                    <children>
-                        <Pane prefHeight="110.0" prefWidth="298.0">
-                            <children>
-                                <Label layoutY="71.0" prefHeight="50.0" prefWidth="161.0" styleClass="card-value" text="₱132,000" />
-                                <Label layoutY="-10.0" prefHeight="70.0" prefWidth="131.0" styleClass="card-title" text="Profit this month" wrapText="true">
-                                    <font>
-                                        <Font name="System Bold" size="12.0" />
-                                    </font>
-                                </Label>
-                                <ImageView fitHeight="58.0" fitWidth="60.0" layoutX="204.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@image/Patients.png" />
-                                    </image>
-                                </ImageView>
-                            </children>
-                        </Pane>
-                    </children>
-                </VBox>
-            </HBox>
-
-            <Label styleClass="section-title" text="Finance Status" />
             <TableView id="finance-table" fx:id="dashboardTable" prefHeight="350.0" prefWidth="1080.0">
                 <columns>
                     <TableColumn fx:id="dateCol" prefWidth="150.0" text="Date" />
-                    <TableColumn fx:id="typeCol" prefWidth="200.0" text="Transaction Type" />
-                    <TableColumn fx:id="descCol" prefWidth="300.0" text="Description" />
-                    <TableColumn fx:id="statusCol" prefWidth="150.0" text="Status" />
+                    <TableColumn fx:id="typeCol" prefWidth="200.0" text="Patient" />
+                    <TableColumn fx:id="descCol" prefWidth="300.0" text="Contact" />
+                    <TableColumn fx:id="statusCol" prefWidth="150.0" text="Address" />
                     <TableColumn fx:id="amountCol" prefWidth="280.0" text="Amount" />
                 </columns>
             </TableView>

@@ -57,7 +57,7 @@
                   <String fx:value="active" />
                   <String fx:value="active-staff" />
                     </styleClass></Button>
-                <Button prefWidth="200.0" text="Patients">
+                <Button fx:id="patientsBtn" onAction="#handlePatientsClick" prefWidth="200.0" text="Patients">
                     <graphic>
                         <Pane prefHeight="30.0" prefWidth="23.0">
                             <children>
@@ -162,8 +162,8 @@
             <HBox alignment="CENTER_LEFT" spacing="10">
                 <StackPane style="-fx-background-color: #d9d9d9; -fx-padding: 5 10; -fx-background-radius: 2;">
                     <HBox alignment="CENTER_LEFT" spacing="8">
-                        <Label style="-fx-font-size: 14px;" text="🔍" />
-                        <TextField fx:id="searchStaffField" prefWidth="250" promptText="Search Staff" style="-fx-background-color: transparent;                                           -fx-border-color: transparent;                                           -fx-prompt-text-fill: #8e8e8e;                                           -fx-font-size: 13px;" />
+                        <Label prefHeight="20.0" prefWidth="14.0" style="-fx-font-size: 14px;" text="🔍" />
+                        <TextField fx:id="searchStaffField" prefHeight="34.0" prefWidth="241.0" promptText="Search Staff" style="-fx-background-color: transparent;                                           -fx-border-color: transparent;                                           -fx-prompt-text-fill: #8e8e8e;                                           -fx-font-size: 13px;" />
                     </HBox>
                 </StackPane>
             </HBox>
