@@ -117,7 +117,7 @@
                         <String fx:value="nav-button" />
                         <String fx:value="nav-button-balance" />
                     </styleClass></Button>
-                <Button prefWidth="200.0" text="Settings">
+                <Button fx:id="settingsBtn" onAction="#handleSettingsClick" prefWidth="200.0" text="Settings">
                     <graphic>
                         <Pane prefHeight="30.0" prefWidth="23.0">
                             <children>

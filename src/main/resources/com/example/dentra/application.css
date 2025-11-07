@@ -54,7 +54,10 @@
     -fx-border-radius: 7;
     -fx-border-color: transparent;
 }
-/* DASHBOARD */
+/* ========================================
+         DASHBOARD
+========================================
+*/
 
 /* Color Palette based on the image */
 .root {
@@ -116,6 +119,10 @@
 
 .nav-button.active-balance ImageView {
     -fx-image: url("image/wallet-white.png");
+}
+
+.nav-button.active-settings ImageView {
+    -fx-image: url("image/settings-white.png");
 }
 
 .nav-button:hover {
@@ -222,7 +229,10 @@
     -fx-alignment: CENTER_LEFT;
 }
 
-/* Sidebar Icon */
+/* ========================================
+         SIDEBAR ICON ALIGNMENT
+   ========================================
+*/
 
 .sidebar-item {
     -fx-alignment: CENTER_LEFT;
@@ -474,5 +484,205 @@
 .filter-control.combo-box .list-cell {
     -fx-background-color: #eeeeee;
     -fx-background-radius: 5px;
+}
+
+/* ========================================
+         DASHBOARD SETTINGS: CONTENT AREA (CENTER)
+========================================
+*/
+
+.content-area {
+    -fx-background-color: #FFFFFF;
+}
+
+.content-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* ========================================
+      SETTINGS SUB-NAVIGATION (LEFT)
+========================================
+*/
+.settings-nav-header {
+     -fx-font-size: 13px;
+     -fx-text-fill: #888888;
+     -fx-font-weight: bold;
+     -fx-padding: 0 0 5 15;
+}
+
+.settings-sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333333;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 15;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+
+}
+
+/* ========================================
+              MY PROFILE
+========================================
+*/
+
+.settings-sidebar-button:hover {
+    -fx-background-color: #29A9FF;
+    -fx-text-fill: white;
+}
+
+
+.active-settings-button {
+    -fx-background-color: #29A9FF;
+    -fx-text-fill: white;
+}
+
+.active-settings-button ImageView {
+    -fx-image: url("image/profile-user-white.png");
+}
+
+/* ========================================
+             NOTIFICATION
+========================================
+*/
+
+.active-notification-button {
+    -fx-background-color: #29A9FF;
+    -fx-text-fill: white;
+}
+
+.active-notification-button ImageView {
+    -fx-image: url("image/bell-white.png");
+}
+
+/* ========================================
+                SECURITY
+========================================
+*/
+
+.active-security-button {
+    -fx-background-color: #29A9FF;
+    -fx-text-fill: white;
+}
+
+.active-security-button ImageView {
+    -fx-image: url("image/security-white.png");
+}
+
+
+/* ========================================
+         SETTINGS FORM (RIGHT)
+========================================
+*/
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 10 0;
+}
+
+.form-textfield {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #DCDCDC;
+    -fx-border-width: 1px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 8px;
+}
+
+.form-textfield:focused {
+    -fx-border-color: #0096FF;
+}
+
+/* ========================================
+         FORM BUTTONS (BOTTOM)
+========================================
+*/
+.cancel-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #555555;
+    -fx-font-size: 14px;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+.cancel-button:hover {
+    -fx-text-fill: #000000;
+}
+
+.save-button {
+    -fx-background-color: #0096FF;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+
+    -fx-pref-height: 40px;
+    -fx-pref-width: 100px;
+}
+.save-button:hover {
+     -fx-background-color: #0082D9;
+}
+
+/* * ==========================================
+ * Styles for Notification Settings
+ * ==========================================
+ */
+.form-label-bold {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+}
+
+.description-text {
+    -fx-text-fill: #888888;
+    -fx-font-size: 12px;
+}
+
+.check-box {
+    -fx-text-fill: #555555;
+}
+
+.check-box .box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1.5px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #007AFF;
+    -fx-border-color: #007AFF;
+}
+
+.check-box:selected .box .mark {
+    -fx-shape: "M 0 5.7 L 3.4 9 L 9 0.7";
+    -fx-fill: white;
+}
+
+.toggle-switch {
+    -fx-pref-width: 50px;
+    -fx-pref-height: 28px;
+    -fx-background-color: #CCCCCC;
+    -fx-background-radius: 14px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 2px;
+}
+
+.toggle-switch .text {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-pref-width: 24px;
+    -fx-pref-height: 24px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 3, 0, 0, 1);
+}
+
+.toggle-switch:selected {
+    -fx-background-color: #007AFF;
+    -fx-alignment: CENTER_RIGHT;
 }
 

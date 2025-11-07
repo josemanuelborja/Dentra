@@ -36,6 +36,9 @@ public class DashboardPurchasesController implements Initializable {
     @FXML
     private Button balanceBtn;
 
+    @FXML
+    private Button settingsBtn;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Populate the Gender ComboBox
@@ -120,6 +123,19 @@ public class DashboardPurchasesController implements Initializable {
         scene.getStylesheets().add(styleCss);
 
         Stage stage = (Stage) balanceBtn.getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void handleSettingsClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-settings-view.fxml"));
+        Scene scene = new Scene(loader.load());
+
+        String styleCss = this.getClass().getResource("application.css").toExternalForm();
+        scene.getStylesheets().add(styleCss);
+
+        Stage stage = (Stage) settingsBtn.getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
