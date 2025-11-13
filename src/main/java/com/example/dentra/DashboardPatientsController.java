@@ -83,6 +83,7 @@ public class DashboardPatientsController {
 
         Stage popupStage = new Stage();
         popupStage.initModality(javafx.stage.Modality.APPLICATION_MODAL);
+        popupStage.initStyle(javafx.stage.StageStyle.UNDECORATED);
         popupStage.setTitle("Add Patient");
         popupStage.setScene(scene);
         popupStage.showAndWait();

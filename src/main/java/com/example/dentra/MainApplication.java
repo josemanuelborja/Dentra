@@ -20,6 +20,7 @@ public class MainApplication extends Application {
 
         stage.setTitle("Dentra");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 }
