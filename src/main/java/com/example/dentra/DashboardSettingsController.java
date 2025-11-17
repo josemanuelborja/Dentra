@@ -1,15 +1,15 @@
 package com.example.dentra;
 
-import javafx.collections.FXCollections;
+import data.users.CurrentUser;
+import data.users.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class DashboardSettingsController {
 
@@ -39,6 +39,34 @@ public class DashboardSettingsController {
 
     @FXML
     private Button securityBtn;
+
+    @FXML
+    private Button cancelBtn;
+
+    @FXML
+    private TextField emailField;
+
+    @FXML
+    private TextField fullNameField;
+
+    @FXML
+    private Button saveBtn;
+
+    // ------------------------------
+    // NEW CODE: Load user information
+    // ------------------------------
+    @FXML
+    private void initialize() {
+
+        System.out.println("DEBUG: CurrentUser.loggedInUser = " + CurrentUser.loggedInUser);
+
+        if (CurrentUser.loggedInUser != null) {
+            User user = CurrentUser.loggedInUser;
+
+            emailField.setText(user.getEmail());
+            fullNameField.setText(user.getUserFirstName() + " " + user.getUserLastName());
+        }
+    }
 
     @FXML
     private void handleLogOutClick() throws IOException {
@@ -157,5 +185,52 @@ public class DashboardSettingsController {
         stage.show();
     }
 
+    @FXML
+    private void handleCancelClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard-view.fxml"));
+        Scene scene = new Scene(loader.load());
 
+        String styleCss = this.getClass().getResource("application.css").toExternalForm();
+        scene.getStylesheets().add(styleCss);
+
+        Stage stage = (Stage) cancelBtn.getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void handleSaveAccountClick() {
+        if (CurrentUser.loggedInUser != null) {
+            String newFullName = fullNameField.getText().trim();
+            String newEmail = emailField.getText().trim();
+
+            if (newFullName.isEmpty() || newEmail.isEmpty()) {
+                showAlert("Error", "Full name and email cannot be empty!");
+                return;
+            }
+
+            // Split full name into first and last name
+            String[] nameParts = newFullName.split(" ", 2);
+            String firstName = nameParts[0];
+            String lastName = nameParts.length > 1 ? nameParts[1] : "";
+
+            // Update the CurrentUser object
+            CurrentUser.loggedInUser.setUserFirstName(firstName);
+            CurrentUser.loggedInUser.setUserLastName(lastName);
+            CurrentUser.loggedInUser.setEmail(newEmail);
+
+
+            showAlert("Success", "Account updated successfully!");
+        } else {
+            showAlert("Error", "No user is currently logged in!");
+        }
+    }
+
+    private void showAlert(String title, String message) {
+        javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
 }

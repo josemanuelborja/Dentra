@@ -31,6 +31,9 @@ public class DashboardSalesController implements Initializable {
     private ComboBox<String> typeComboBox;
 
     @FXML
+    private ComboBox<String> sortComboBox;
+
+    @FXML
     private Button purchasesBtn;
 
     @FXML
@@ -44,6 +47,10 @@ public class DashboardSalesController implements Initializable {
         // Populate the Gender ComboBox
         typeComboBox.setItems(FXCollections.observableArrayList(
                 "Child", "Teen", "Adult", "Senior"
+        ));
+
+        sortComboBox.setItems(FXCollections.observableArrayList(
+                "Recent", "Oldest"
         ));
 
     }

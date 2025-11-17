@@ -170,7 +170,7 @@
 
                     <VBox styleClass="filter-group">
                         <Label styleClass="filter-label" text="Sort" />
-                        <ComboBox prefWidth="200.0" promptText="Recent" styleClass="filter-control" />
+                        <ComboBox fx:id="sortComboBox" prefWidth="200.0" promptText="Select Sort" styleClass="filter-control" />
                     </VBox>
 
                     <VBox styleClass="filter-group">
@@ -189,19 +189,20 @@
                     </VBox>
                 </HBox>
             </VBox>
-            <TableView fx:id="dashboardStaffTable" prefHeight="250.0" prefWidth="1018.0" styleClass="user-table">
+            <TableView fx:id="purchaseTable" prefHeight="350" prefWidth="1080">
                 <columns>
-                    <TableColumn fx:id="nameCol" prefWidth="180.0" text="Name" />
-                    <TableColumn fx:id="emailCol" prefWidth="250.0" text="Email" />
-                    <TableColumn fx:id="addressCol" prefWidth="250.0" text="Address" />
-                    <TableColumn fx:id="contactCol" prefWidth="150.0" text="Contact" />
-                    <TableColumn fx:id="statusCol" prefWidth="120.0" text="Status" />
-                    <TableColumn fx:id="actionCol" prefWidth="160.4000244140625" text="Action" />
+                    <TableColumn fx:id="purchaseDateCol" prefWidth="150" text="Date" />
+                    <TableColumn fx:id="purchaseNameCol" prefWidth="200" text="Name" />
+                    <TableColumn fx:id="purchaseContactCol" prefWidth="150" text="Contact" />
+                    <TableColumn fx:id="purchaseMedicineCol" prefWidth="200" text="Medicine" />
+                    <TableColumn fx:id="purchaseAmountCol" prefWidth="180" text="Amount" />
+                    <TableColumn fx:id="purchaseActionCol" prefWidth="150" text="Action" />
                 </columns>
                 <columnResizePolicy>
-                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
                 </columnResizePolicy>
             </TableView>
+
         </VBox>
     </center>
 </BorderPane>

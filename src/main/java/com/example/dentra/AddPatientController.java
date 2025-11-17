@@ -1,63 +1,119 @@
-package com.example.dentra; // Use your package name
+package com.example.dentra;
 
 import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class AddPatientController implements Initializable {
 
-    // --- Form Fields ---
     @FXML private TextField fullNameField;
     @FXML private ComboBox<String> genderComboBox;
     @FXML private TextField ageField;
-
-    // --- Buttons ---
+    @FXML private TextField phoneField;
+    @FXML private TextField addressField;
+    @FXML private TextField emergencyContactField;
     @FXML private Button cancelButton;
+    @FXML private TextField emailField;
+    @FXML private TextField procedureField;
+
+    private DashboardPatientsController dashboardController;
+
+    public void setDashboardController(DashboardPatientsController controller) {
+        this.dashboardController = controller;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Populate the Gender ComboBox
-        genderComboBox.setItems(FXCollections.observableArrayList(
-                "Male", "Female"
-        ));
+        genderComboBox.setItems(FXCollections.observableArrayList("Male", "Female"));
+
+        ageField.setTextFormatter(onlyNumbers());
+        phoneField.setTextFormatter(onlyNumbers());
+        emergencyContactField.setTextFormatter(onlyNumbers());
+    }
+
+    private TextFormatter<String> onlyNumbers() {
+        return new TextFormatter<>(change -> {
+            if (change.getText().matches("[0-9]*")) {
+                return change;
+            }
+            return null;
+        });
     }
 
     @FXML
-    private void handleAddPatient(ActionEvent event) {
-
+    private void handleAddPatient() {
         String fullName = fullNameField.getText();
         String gender = genderComboBox.getValue();
         String age = ageField.getText();
+        String phone = phoneField.getText();
+        String address = addressField.getText();
+        String emergency = emergencyContactField.getText();
+        String email = emailField.getText(); // get email input
+        String procedure = procedureField.getText();
 
-        System.out.println("Adding New Patient:");
-        System.out.println("Full Name: " + fullName);
-        System.out.println("Gender: " + gender);
-        System.out.println("Age: " + age);
+        // Basic validation: check all fields are filled
+        if (fullName.isEmpty() || gender == null || age.isEmpty() || phone.isEmpty()
+                || address.isEmpty() || emergency.isEmpty() || email.isEmpty()) {
+            showAlert("Please fill in all fields!");
+            return;
+        }
+
+        // Simple email validation
+        if (!email.contains("@")) {
+            showAlert("Please enter a valid email containing '@'.");
+            return;
+        }
+
+        String transactionType = "Cash";
+        double remainingBalance = 0.0;
+        double totalAmount = 0.0;
+
+// Create today's date as string
+        String date = LocalDate.now().toString();
+
+        Patient newPatient = new Patient(
+                date,
+                fullName,
+                age,
+                address,
+                phone,
+                gender,
+                email,
+                procedure,
+                emergency,
+                remainingBalance,
+                totalAmount,
+                transactionType
+        );
+        if (dashboardController != null) {
+            dashboardController.addPatientToTable(newPatient);
+        }
 
         closeWindow();
     }
 
     @FXML
-    private void handleCancel(ActionEvent event) {
-        // Just close the window
+    private void handleCancel() {
         closeWindow();
     }
 
-    /**
-     * Helper method to get the current stage and close it.
-     */
     private void closeWindow() {
-        // Get the stage from any of the buttons
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
+    }
+
+    // Simple popup alert
+    private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Validation Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

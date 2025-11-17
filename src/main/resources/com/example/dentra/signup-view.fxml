@@ -39,12 +39,12 @@
                         </HBox>
 
                         <!-- Input fields -->
-                        <TextField layoutX="189.0" layoutY="224.0" prefHeight="45.26" prefWidth="308.0" promptText="Email" styleClass="primary-border" />
-                        <PasswordField layoutX="189.0" layoutY="400.0" prefHeight="45.26" prefWidth="308.0" promptText="Password" styleClass="primary-border" />
+                        <TextField fx:id="emailField" layoutX="189.0" layoutY="224.0" prefHeight="45.26" prefWidth="308.0" promptText="Email" styleClass="primary-border" />
+                        <PasswordField fx:id="passwordField" layoutX="189.0" layoutY="400.0" prefHeight="45.26" prefWidth="308.0" promptText="Password" styleClass="primary-border" />
 
-                        <Button fx:id="createaccountBtn" layoutX="272.0" layoutY="461.0" onAction="#handlecreateaccountClick" prefHeight="30.18" prefWidth="141.29" styleClass="primary-button" text="Create Account" />
-                  <TextField layoutX="189.0" layoutY="284.0" prefHeight="45.26" prefWidth="308.0" promptText="First Name" styleClass="primary-border" />
-                  <TextField layoutX="189.0" layoutY="340.0" prefHeight="45.26" prefWidth="308.0" promptText="Last Name" styleClass="primary-border" />
+                        <Button fx:id="createaccountBtn" layoutX="272.0" layoutY="461.0" onAction="#handleCreateAccountClick" prefHeight="30.18" prefWidth="141.29" styleClass="primary-button" text="Create Account" />
+                  <TextField fx:id="firstNameField" layoutX="189.0" layoutY="284.0" prefHeight="45.26" prefWidth="308.0" promptText="First Name" styleClass="primary-border" />
+                  <TextField fx:id="lastNameField" layoutX="189.0" layoutY="340.0" prefHeight="45.26" prefWidth="308.0" promptText="Last Name" styleClass="primary-border" />
                   <ImageView fitHeight="192.0" fitWidth="328.0" layoutX="-50.0" layoutY="-51.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/logo.png" />

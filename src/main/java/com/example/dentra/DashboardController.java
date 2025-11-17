@@ -1,9 +1,12 @@
 package com.example.dentra;
 
+import data.users.User;
+import data.users.UsersData;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -30,6 +33,17 @@ public class DashboardController {
 
     @FXML
     private Button settingsBtn;
+
+    @FXML
+    private Label usernameLabel;
+
+    @FXML
+    private void initialize() {
+        if (UsersData.currentUser != null) {
+            String fullName = UsersData.currentUser.getUserFirstName() + " " + UsersData.currentUser.getUserLastName();
+            usernameLabel.setText(fullName);
+        }
+    }
 
     @FXML
     private void handleLogOutClick() throws IOException {

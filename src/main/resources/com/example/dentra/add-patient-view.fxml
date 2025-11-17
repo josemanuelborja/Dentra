@@ -3,6 +3,7 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <VBox fx:id="rootPane" styleClass="root-pane" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentra.AddPatientController">
     <padding>
@@ -19,47 +20,80 @@
         <VBox.margin>
             <Insets top="20.0" />
         </VBox.margin>
+
+        <!-- Row 1 -->
         <HBox styleClass="form-row">
             <VBox styleClass="form-field-group" HBox.hgrow="ALWAYS">
-                <Label styleClass="form-label" text="Full Name*" />
+                <TextFlow>
+                    <Text styleClass="form-label" text="Full Name" />
+                    <Text style="-fx-fill: red;" styleClass="form-label" text="*" />
+                </TextFlow>
                 <TextField fx:id="fullNameField" promptText="Enter patient's full name" />
             </VBox>
+
             <VBox styleClass="form-field-group" HBox.hgrow="ALWAYS">
-                <Label styleClass="form-label" text="Gender*" />
+                <TextFlow>
+                    <Text styleClass="form-label" text="Gender" />
+                    <Text style="-fx-fill: red;" styleClass="form-label" text="*" />
+                </TextFlow>
                 <ComboBox fx:id="genderComboBox" prefWidth="300.0" promptText="Select Gender" />
             </VBox>
         </HBox>
 
+        <!-- Row 2 -->
         <HBox styleClass="form-row">
             <VBox styleClass="form-field-group" HBox.hgrow="ALWAYS">
-                <Label styleClass="form-label" text="Age*" />
+                <TextFlow>
+                    <Text styleClass="form-label" text="Age" />
+                    <Text style="-fx-fill: red;" styleClass="form-label" text="*" />
+                </TextFlow>
                 <TextField fx:id="ageField" promptText="Enter age" />
             </VBox>
+
             <VBox styleClass="form-field-group" HBox.hgrow="ALWAYS">
-                <Label styleClass="form-label" text="Phone Number*" />
+                <TextFlow>
+                    <Text styleClass="form-label" text="Phone Number" />
+                    <Text style="-fx-fill: red;" styleClass="form-label" text="*" />
+                </TextFlow>
                 <TextField fx:id="phoneField" promptText="Enter your phone number" />
             </VBox>
         </HBox>
 
+        <!-- Row 3 -->
         <HBox styleClass="form-row">
             <VBox styleClass="form-field-group" HBox.hgrow="ALWAYS">
-                <Label styleClass="form-label" text="Email*" />
+                <TextFlow>
+                    <Text styleClass="form-label" text="Email" />
+                    <Text style="-fx-fill: red;" styleClass="form-label" text="*" />
+                </TextFlow>
                 <TextField fx:id="emailField" promptText="Enter email address" />
             </VBox>
+
             <VBox styleClass="form-field-group" HBox.hgrow="ALWAYS">
-                <Label styleClass="form-label" text="Emergency Contact*" />
+                <TextFlow>
+                    <Text styleClass="form-label" text="Emergency Contact" />
+                    <Text style="-fx-fill: red;" styleClass="form-label" text="*" />
+                </TextFlow>
                 <TextField fx:id="emergencyContactField" promptText="Enter your phone number" />
             </VBox>
         </HBox>
 
+        <!-- Procedure -->
         <VBox styleClass="form-field-group">
-            <Label styleClass="form-label" text="Procedure*" />
+            <TextFlow>
+                <Text styleClass="form-label" text="Procedure" />
+                <Text style="-fx-fill: red;" styleClass="form-label" text="*" />
+            </TextFlow>
             <TextField fx:id="procedureField" promptText="Enter procedure details" />
         </VBox>
 
+        <!-- Address -->
         <VBox styleClass="form-field-group">
-            <Label styleClass="form-label" text="Address*" />
-         <TextField fx:id="procedureField1" promptText="Enter email address" />
+            <TextFlow>
+                <Text styleClass="form-label" text="Address" />
+                <Text style="-fx-fill: red;" styleClass="form-label" text="*" />
+            </TextFlow>
+            <TextField fx:id="addressField" promptText="Enter email address" />
         </VBox>
     </VBox>
 
