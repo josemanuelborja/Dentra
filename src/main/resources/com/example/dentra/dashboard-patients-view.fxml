@@ -179,7 +179,11 @@
                </graphic>
             </Button>
             </HBox>
-            <TableView fx:id="patientsTable" prefHeight="350" prefWidth="1080">
+            <TableView fx:id="patientsTable"
+                       AnchorPane.topAnchor="0.0"
+                       AnchorPane.bottomAnchor="0.0"
+                       AnchorPane.leftAnchor="0.0"
+                       AnchorPane.rightAnchor="0.0">
                 <columns>
                     <TableColumn fx:id="patientDateCol" prefWidth="150" text="Date" />
                     <TableColumn fx:id="patientNameCol" prefWidth="200" text="Patient" />
@@ -192,6 +196,7 @@
                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
                 </columnResizePolicy>
             </TableView>
+
         </VBox>
     </center>
 </BorderPane>
