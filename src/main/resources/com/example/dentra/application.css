@@ -473,6 +473,10 @@
     -fx-text-fill: #29A9FF;
 }
 
+#sortComboBox .combo-box-popup .list-cell:hover {
+    -fx-text-fill: #29A9FF;
+}
+
 
 .filter-control.date-picker .text-field {
     -fx-background-color: #eeeeee;
